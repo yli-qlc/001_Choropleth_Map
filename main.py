@@ -5,12 +5,12 @@ import geopandas as gpd
 
 #pd.set_option('display.max_columns', None)
 
-df1 = gpd.read_file(r"C:\Users\YingLi\PycharmProjects\china_aging\chn_admbnda_adm1_ocha_2020.shp")
+df1 = gpd.read_file(r"...\chn_admbnda_adm1_ocha_2020.shp")
 print(list(df1))
 print(df1.head)
 
 
-df2 = pd.read_csv(r"C:\Users\YingLi\PycharmProjects\china_aging\Age.csv")
+df2 = pd.read_csv(r"...\Age.csv")
 merged=pd.merge(df1, df2, on='ADM1_PCODE')
 merged = df1.merge(df2, left_on = 'ADM1_PCODE', right_on = 'ADM1_PCODE',how = 'outer')
 merged.fillna(0, inplace=True)
